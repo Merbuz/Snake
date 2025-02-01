@@ -28,7 +28,6 @@ class SnakeGame:
         self.direction = self.vector['Right']
         self.sleep = 1 / fps
         self.border_collision = border_collision
-        self.show_info = True
 
     async def spawn_apple(self) -> None:
         """Spawns apple on the map"""
@@ -101,26 +100,24 @@ class SnakeGame:
 
         self.snake.insert(0, [y, x])
 
-        if self.show_info:
-            print('* Press E to hide the information at the bottom of the board')  # noqa: E501
-            print('* Press Escape to end the game')
-            print('* WASD and arrows - movement')
-            print('-------------------------------')
-            print('* Board size:', self.board.size_x, 'x', self.board.size_y)
-            print('* Snake length:', len(self.snake))
-            print('* Apples collected:', len(self.snake)-1)
-            print('* Current direction:', dict([(v, k) for k, v in self.vector.items()])[self.direction])  # noqa: E501
-            print('* Border collision is', 'enabled' if self.border_collision else 'disabled')  # noqa: E501
-            print('* Sleep between update:', round(self.sleep, 2))
-            print('* FPS:', 1 / self.sleep)
+        print('* Press Escape to end the game')
+        print('* WASD and arrows - movement')
+        print('-------------------------------')
+        print('* Board size:', self.board.size_x, 'x', self.board.size_y)
+        print('* Snake length:', len(self.snake))
+        print('* Apples collected:', len(self.snake)-1)
+        print('* Current direction:', dict([(v, k) for k, v in self.vector.items()])[self.direction])  # noqa: E501
+        print('* Border collision is', 'enabled' if self.border_collision else 'disabled')  # noqa: E501
+        print('* Sleep between update:', round(self.sleep, 2))
+        print('* FPS:', 1 / self.sleep)
 
-            if self.apple:
-                y_distance = (self.apple[0] - self.snake[0][0]) ** 2
-                x_distance = (self.apple[1] - self.snake[0][1]) ** 2
+        if self.apple:
+            y_distance = (self.apple[0] - self.snake[0][0]) ** 2
+            x_distance = (self.apple[1] - self.snake[0][1]) ** 2
 
-                distance = sqrt(y_distance + x_distance)
+            distance = sqrt(y_distance + x_distance)
 
-                print('* Distance to apple:', round(distance, 0))
+            print('* Distance to apple:', round(distance, 0))
 
     async def bind_update(self) -> None:
         """Sets the direction by pressing the button"""
@@ -151,9 +148,6 @@ class SnakeGame:
 
             if keyboard.is_pressed('right'):
                 self.direction = self.vector['Right']
-
-            if keyboard.is_pressed('e'):
-                self.show_info = not self.show_info
 
             if keyboard.is_pressed('escape'):
                 await self.defeat()
