@@ -111,6 +111,8 @@ class SnakeGame:
         print('* Sleep between update:', round(self.sleep, 2))
         print('* FPS:', 1 / self.sleep)
 
+        print(self.border_collision)
+
         if self.apple:
             y_distance = (self.apple[0] - self.snake[0][0]) ** 2
             x_distance = (self.apple[1] - self.snake[0][1]) ** 2

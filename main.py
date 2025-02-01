@@ -1,19 +1,24 @@
 from snake import SnakeGame
 from settings import (
-    BORDER_COLLISION,
     BOARD_X_SIZE,
     BOARD_Y_SIZE,
     FPS
 )
+import asyncclick as click
 import asyncio
 
 
-async def main():
+@click.command()
+@click.option('--x_size')
+@click.option('--y_size')
+@click.option('--fps')
+@click.option('--border')
+async def main(x_size, y_size, fps, border):
     snake = SnakeGame(
-        x=BOARD_X_SIZE,
-        y=BOARD_Y_SIZE,
-        fps=FPS,
-        border_collision=BORDER_COLLISION
+        x=int(x_size) if x_size else BOARD_X_SIZE,
+        y=int(y_size) if y_size else BOARD_Y_SIZE,
+        fps=int(fps) if fps else FPS,
+        border_collision=bool(int(border) if border else 0)
     )
 
     await asyncio.gather(
@@ -21,4 +26,5 @@ async def main():
         snake.run_update()
     )
 
-asyncio.run(main())
+if __name__ == "__main__":
+    main()
