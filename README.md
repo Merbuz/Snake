@@ -11,11 +11,12 @@ Simple snake written on Python, that works in your console!
 
 # Usage
 
-`python python_snake.py`
 
-or
-
-`python python_snake.py --x_size <board width> --y_size <board height> --fps <FPS> --border <1 or 0 for enable or disable border collision>`
+```python python_snake.py ```
+```--x_size <board width>```
+```--y_size <board height>```
+```--fps <FPS>```
+```--border <1 or 0 for enable or disable border collision>```
 
 ## Example of usage
 
