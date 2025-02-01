@@ -6,7 +6,9 @@ Simple snake written on Python, that works in your console!
 # Setup
 
 `git clone https://github.com/Merbuz/Snake.git`
+
 `cd Snake`
+
 `pip install -r requirements.txt`
 
 # Usage
