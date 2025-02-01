@@ -1,6 +1,6 @@
 from typing import NoReturn, List, Optional
 from random import randint
-from board import Board
+from snake_game.board import Board
 from math import sqrt
 from os import _exit
 import keyboard
