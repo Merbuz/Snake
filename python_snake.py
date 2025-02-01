@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from snake_game.snake import SnakeGame
 from settings import (
     BOARD_X_SIZE,
