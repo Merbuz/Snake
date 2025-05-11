@@ -5,25 +5,35 @@ Simple snake written on Python, that works in your console!
 
 # Setup
 
-`git clone https://github.com/Merbuz/Snake.git`
+```cmd
+git clone https://github.com/Merbuz/Snake.git
+```
 
-`cd Snake`
+```cmd
+cd Snake
+```
 
-`pip install -r requirements.txt`
+```cmd
+pip install -r requirements.txt
+```
 
 # Usage
 
 
-```python python_snake.py```
+```cmd
+python python_snake.py
 
-```--x_size <board width>```
+--x_size <board width>
 
-```--y_size <board height>```
+--y_size <board height>
 
-```--fps <FPS>```
+--fps <FPS>
 
-```--border <1 or 0 for enable or disable border collision>```
+--border <1 or 0 for enable or disable border collision>
+```
 
 ## Example of usage
 
-`python python_snake.py --x_size 28 --y_size 14 --fps 6 --border 0`
+```cmd
+python python_snake.py --x_size 28 --y_size 14 --fps 6 --border 0
+```
